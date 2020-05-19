@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_ui/model/body.dart';
+// import 'package:instagram_ui/model/body.dart';
 
 class SecondPage extends StatefulWidget {
-  final instaobject;
-  final BodyDetail bd2;
-  SecondPage({@required this.instaobject,@required this.bd2});
+  // final instaobject;
+  // final BodyDetail bd2;
+  // SecondPage({@required this.instaobject,@required this.bd2});
   @override
   _SecondPageState createState() => _SecondPageState();
 }
