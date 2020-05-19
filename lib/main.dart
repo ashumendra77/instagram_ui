@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget getBody(BodyDetail bd) {
     return GestureDetector(
-      onTap: () => debugPrint("body"),
+      onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondPage()));},
       child: Container(
           height: 370,
           margin: EdgeInsets.only(bottom: 15),
