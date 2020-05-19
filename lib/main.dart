@@ -23,14 +23,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // List imageurl = [
-  //   "images/pic5.jpeg",
-  //   "images/pic5.jpeg",
-  //   "images/pic5.jpeg",
-  //   "images/pic5.jpeg",
-  //   // "images/pic5.jpeg",
-  // ];
-
   Widget getheader(Header headerdata) {
     return GestureDetector(
       onTap: () => debugPrint("p"),
@@ -43,15 +35,12 @@ class _HomePageState extends State<HomePage> {
                   height: 65,
                   width: 65,
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.white, width: 5),
+                      border: Border.all(color: Colors.white, width: 2),
                       image: DecorationImage(
                           image: AssetImage(headerdata.imageurl),
                           fit: BoxFit.fill),
                       color: Colors.red,
-                      // borderRadius: BorderRadius.all(Radius.circular(90))
                       shape: BoxShape.circle)),
-
-              // if()
               Positioned(
                 bottom: 2,
                 right: 1,
@@ -82,24 +71,22 @@ class _HomePageState extends State<HomePage> {
           width: double.infinity,
           decoration: BoxDecoration(
               shape: BoxShape.circle,
-              // borderRadius: BorderRadius.circular(50),
               gradient: LinearGradient(colors: [
                 Colors.orangeAccent,
                 Colors.pink,
               ])),
           child: Icon(Icons.add),
         ),
-        onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondPage()));},
-        //
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => SecondPage()));
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: Container(
-          //  decoration: BoxDecoration(border:Border.all(color: Colors.grey)),
           child: BottomAppBar(
-        // notchMargin: 15,
         shape: CircularNotchedRectangle(),
-        
-        color: Colors.red,
+         color: Colors.redAccent,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
@@ -140,145 +127,193 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
           child: ListView(
         children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Icon(
-                    Icons.photo_camera,
-                    color: Colors.white,
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Icon(
-                        Icons.home,
-                        color: Colors.white,
-                      ),
-                      SizedBox(width: 8),
-                      Icon(
-                        Icons.near_me,
-                        color: Colors.white,
-                      )
-                    ],
-                  )
-                ],
-              ),
-              Text(
-                "Instagram",
-                style: TextStyle(fontSize: 22, color: Colors.white),
-              ),
-              SizedBox(height: 20),
-              Container(
-                  // margin: EdgeInsets.only(left:10),
-                  height: 65,
-                  child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: headerlist
-                          .toList()
-                          .asMap()
-                          .entries
-                          .map((MapEntry map) {
-                        return getheader(map.value);
-                      }).toList())),
-              SizedBox(height: 15),
-              Container(
-                    height: 350,
+          Padding(
+            padding: EdgeInsets.only(left: 10, right: 10, top: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Icon(
+                      Icons.photo_camera,
+                      color: Colors.white,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.home,
+                          color: Colors.white,
+                        ),
+                        SizedBox(width: 8),
+                        Icon(
+                          Icons.near_me,
+                          color: Colors.white,
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                SizedBox(height: 15),
+                Text(
+                  "Instagram",
+                  style: TextStyle(fontSize: 23, color: Colors.white),
+                ),
+                SizedBox(height: 20),
+                Container(
+                    height: 65,
+                    child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: headerlist
+                            .toList()
+                            .asMap()
+                            .entries
+                            .map((MapEntry map) {
+                          return getheader(map.value);
+                        }).toList())),
+                SizedBox(height: 15),
+                Container(
+                    height: 370,
                     width: double.infinity,
-                    color: Colors.yellow,
                     child: Column(
                       children: <Widget>[
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Row(
-              children: <Widget>[
-                Container(
-                    height: 40,
-                    width: 40,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.white, width: 5),
-                        image: DecorationImage(
-                            image: AssetImage("images/pic5.jpeg"),
-                            fit: BoxFit.fill),
-                        color: Colors.red,
-                        //     // borderRadius: BorderRadius.all(Radius.circular(90))
-                        shape: BoxShape.circle)),
-                SizedBox(width: 5),
-                Text("Janet Deo"),
-              ],
+                              children: <Widget>[
+                                Container(
+                                    height: 40,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: Colors.white, width: 2),
+                                        image: DecorationImage(
+                                            image:
+                                                AssetImage("images/pic5.jpeg"),
+                                            fit: BoxFit.fill),
+                                        color: Colors.red,
+                                        shape: BoxShape.circle)),
+                                SizedBox(width: 5),
+                                Text("Janet Deo",
+                                    style: TextStyle(color: Colors.white)),
+                              ],
                             ),
-                            IconButton(icon: Icon(Icons.more_horiz),
-                            onPressed: (){})
-                            // Icon(Icons.more_horiz)
+                            IconButton(
+                                icon: Icon(
+                                  Icons.more_horiz,
+                                  color: Colors.grey,
+                                ),
+                                onPressed: () {})
                           ],
                         ),
                         SizedBox(height: 8),
                         ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: Image.asset(
-              "images/pic5.jpeg",
-              width: double.infinity,
-              height: 270,
-              fit: BoxFit.fill,
+                              "images/pic5.jpeg",
+                              width: double.infinity,
+                              height: 280,
+                              fit: BoxFit.fill,
                             )),
+                        SizedBox(height: 10),
                         Row(
                           children: <Widget>[
                             Icon(
-              Icons.favorite_border,
-              color: Colors.white,
+                              Icons.favorite_border,
+                              color: Colors.white,
                             ),
-                            Text("123K"),
+                            SizedBox(width: 8),
+                            Text("123K", style: TextStyle(color: Colors.white)),
                             Container(
-                height: 18,
-                child: VerticalDivider(
-                  color: Colors.red,
-                  thickness: 1,
-                )),
-                            Icon(Icons.chat_bubble_outline),
-                            Text("15")
+                                height: 18,
+                                child: VerticalDivider(
+                                  color: Colors.grey,
+                                  thickness: 1,
+                                )),
+                            Icon(
+                              Icons.chat_bubble_outline,
+                              color: Colors.white,
+                            ),
+                            SizedBox(width: 8),
+                            Text("15", style: TextStyle(color: Colors.white))
                           ],
                         )
                       ],
-                    ))
-
-              // Row(children: <Widget>[
-              //   ListView(children:headerlist.toList().asMap().entries.map((MapEntry map){
-              //     return getheader(map.value);
-              //   }).toList())
-              // ],)
-              // Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //   children: <Widget>[
-              //   for (int i=0;i<imageurl.length;i++)
-              //   Stack(
-              //   children: <Widget>[
-              //     Container(
-              //         height: 65,
-              //         width: 65,
-              //         decoration: BoxDecoration(
-              //             border: Border.all(color: Colors.white, width: 5),
-              //             image: DecorationImage(
-              //                 image: AssetImage("images/pic5.jpeg"),
-              //                 fit: BoxFit.fill),
-              //             color: Colors.red,
-              //             // borderRadius: BorderRadius.all(Radius.circular(90))
-              //             shape: BoxShape.circle)),
-              //     Positioned(
-              //       bottom: 2,
-              //       right: 1,
-              //       child: Container(
-              //           height: 18,
-              //           width: 18,
-              //           child: Icon(Icons.add, size: 18),
-              //           decoration: BoxDecoration(
-              //               color: Colors.white, shape: BoxShape.circle)),
-              //     ),
-              //   ],
-              // )
-              // ],)
-            ],
+                    )),
+                SizedBox(height: 15),
+                Container(
+                    height: 370,
+                    width: double.infinity,
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Container(
+                                    height: 40,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: Colors.white, width: 5),
+                                        image: DecorationImage(
+                                            image:
+                                                AssetImage("images/pic5.jpeg"),
+                                            fit: BoxFit.fill),
+                                        color: Colors.red,
+                                        shape: BoxShape.circle)),
+                                SizedBox(width: 5),
+                                Text("Janet Deo",
+                                    style: TextStyle(color: Colors.white)),
+                              ],
+                            ),
+                            IconButton(
+                                icon: Icon(
+                                  Icons.more_horiz,
+                                  color: Colors.grey,
+                                ),
+                                onPressed: () {})
+                          ],
+                        ),
+                        SizedBox(height: 8),
+                        ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.asset(
+                              "images/pic5.jpeg",
+                              width: double.infinity,
+                              height: 280,
+                              fit: BoxFit.fill,
+                            )),
+                        SizedBox(height: 10),
+                        Row(
+                          children: <Widget>[
+                            Icon(
+                              Icons.favorite_border,
+                              color: Colors.white,
+                            ),
+                            SizedBox(width: 8),
+                            Text("123K", style: TextStyle(color: Colors.white)),
+                            Container(
+                                height: 18,
+                                child: VerticalDivider(
+                                  color: Colors.grey,
+                                  thickness: 1,
+                                )),
+                            Icon(
+                              Icons.chat_bubble_outline,
+                              color: Colors.white,
+                            ),
+                            SizedBox(width: 8),
+                            Text("15", style: TextStyle(color: Colors.white))
+                          ],
+                        )
+                      ],
+                    )),
+                SizedBox(height: 10)
+              ],
+            ),
           )
         ],
       )),
