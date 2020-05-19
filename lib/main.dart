@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_ui/second.dart';
-
 import 'model/header.dart';
 
 void main() {
@@ -27,7 +26,6 @@ class _HomePageState extends State<HomePage> {
     return GestureDetector(
       onTap: () => debugPrint("p"),
       child: Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Stack(
             children: <Widget>[
@@ -50,10 +48,9 @@ class _HomePageState extends State<HomePage> {
                     child: Icon(Icons.add, size: 18),
                     decoration: BoxDecoration(
                         color: Colors.white, shape: BoxShape.circle)),
-              ),
+              )
             ],
           ),
-          // sizd
           SizedBox(width: 15)
         ],
       ),
@@ -86,7 +83,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: Container(
           child: BottomAppBar(
         shape: CircularNotchedRectangle(),
-         color: Colors.redAccent,
+        color: Colors.redAccent,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,

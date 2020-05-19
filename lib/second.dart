@@ -6,7 +6,7 @@ class SecondPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xff1d1c25),
       bottomNavigationBar: Padding(
-        padding:  EdgeInsets.only(left:10.0,right: 10,bottom: 5),
+        padding: EdgeInsets.only(left: 10.0, right: 10, bottom: 5),
         child: Container(
             height: 60,
             decoration: BoxDecoration(
@@ -30,7 +30,7 @@ class SecondPage extends StatelessWidget {
           child: ListView(
         children: <Widget>[
           Padding(
-            padding:  EdgeInsets.only(top:10.0,left: 10,right: 10),
+            padding: EdgeInsets.only(top: 10.0, left: 10, right: 10),
             child: Column(
               children: <Widget>[
                 Container(
@@ -55,8 +55,8 @@ class SecondPage extends StatelessWidget {
                                 height: 40,
                                 width: 40,
                                 decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: Colors.white, width: 2),
+                                    border: Border.all(
+                                        color: Colors.white, width: 2),
                                     image: DecorationImage(
                                         image: AssetImage("images/pic5.jpeg"),
                                         fit: BoxFit.fill),
@@ -84,7 +84,7 @@ class SecondPage extends StatelessWidget {
                               Icons.favorite_border,
                               color: Colors.white,
                             ),
-                            SizedBox(width:10),
+                            SizedBox(width: 10),
                             Text("123K", style: TextStyle(color: Colors.white)),
                             Container(
                                 height: 18,
@@ -96,7 +96,7 @@ class SecondPage extends StatelessWidget {
                               Icons.chat_bubble_outline,
                               color: Colors.white,
                             ),
-                            SizedBox(width:10),
+                            SizedBox(width: 10),
                             Text("15", style: TextStyle(color: Colors.white))
                           ],
                         )
@@ -112,7 +112,8 @@ class SecondPage extends StatelessWidget {
                             height: 40,
                             width: 40,
                             decoration: BoxDecoration(
-                                border: Border.all(color: Colors.white, width: 2),
+                                border:
+                                    Border.all(color: Colors.white, width: 2),
                                 image: DecorationImage(
                                     image: AssetImage("images/pic5.jpeg"),
                                     fit: BoxFit.fill),
@@ -150,7 +151,8 @@ class SecondPage extends StatelessWidget {
                             height: 40,
                             width: 40,
                             decoration: BoxDecoration(
-                                border: Border.all(color: Colors.white, width: 2),
+                                border:
+                                    Border.all(color: Colors.white, width: 2),
                                 image: DecorationImage(
                                     image: AssetImage("images/pic5.jpeg"),
                                     fit: BoxFit.fill),
