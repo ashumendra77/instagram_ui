@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget getBody(BodyDetail bd) {
     return GestureDetector(
-      onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondPage()));},
+      onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondPage(bd2: bd,)));},
       child: Container(
           height: 370,
           margin: EdgeInsets.only(bottom: 15),
@@ -149,8 +149,8 @@ class _HomePageState extends State<HomePage> {
           child: Icon(Icons.add),
         ),
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => SecondPage()));
+          // Navigator.push(
+          //     context, MaterialPageRoute(builder: (context) => SecondPage()));
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-// import 'package:instagram_ui/model/body.dart';
+ import 'package:instagram_ui/model/body.dart';
 
 class SecondPage extends StatefulWidget {
   // final instaobject;
-  // final BodyDetail bd2;
-  // SecondPage({@required this.instaobject,@required this.bd2});
+  final BodyDetail bd2;
+   SecondPage({@required this.bd2});
   @override
   _SecondPageState createState() => _SecondPageState();
 }
@@ -14,26 +14,30 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff1d1c25),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.only(left: 10.0, right: 10, bottom: 5),
-        child: Container(
-            height: 60,
-            decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(30)),
-            child: TextField(
-              autofocus: false,
-              decoration: InputDecoration(
-                  labelText: "Add a comment...",
-                  prefixIcon: Container(
-                      margin: EdgeInsets.only(left: 15, right: 15),
-                      height: 45,
-                      width: 45,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: AssetImage("images/pic5.jpeg"),
-                              fit: BoxFit.fill)))),
-            )),
+      bottomNavigationBar: Transform.translate(
+        offset: Offset(0.0, -1*MediaQuery.of(context).viewInsets.bottom),
+              child: Padding(
+          padding: EdgeInsets.only(left: 10.0, right: 10, bottom: 5),
+          child: Container(
+              height: 60,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(30)),
+              child: TextField(
+                autofocus: false,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                    labelText: "Add a comment...",
+                    prefixIcon: Container(
+                        margin: EdgeInsets.only(left: 15, right: 15),
+                        height: 45,
+                        width: 45,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                                image: AssetImage("images/pic5.jpeg"),
+                                fit: BoxFit.fill)))),
+              )),
+        ),
       ),
       body: SafeArea(
           child: ListView(
@@ -94,7 +98,7 @@ class _SecondPageState extends State<SecondPage> {
                               color: Colors.white,
                             ),
                             SizedBox(width: 10),
-                            Text("123K", style: TextStyle(color: Colors.white)),
+                            Text("${widget.bd2.like}K", style: TextStyle(color: Colors.white)),
                             Container(
                                 height: 18,
                                 child: VerticalDivider(
@@ -106,7 +110,7 @@ class _SecondPageState extends State<SecondPage> {
                               color: Colors.white,
                             ),
                             SizedBox(width: 10),
-                            Text("15", style: TextStyle(color: Colors.white))
+                            Text("${widget.bd2.comment}", style: TextStyle(color: Colors.white))
                           ],
                         )
                       ],
