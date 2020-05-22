@@ -25,7 +25,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Widget getheader(Header headerdata) {
     return GestureDetector(
-      onTap: () => debugPrint("p"),
+      onTap: () {},
       child: Row(
         children: <Widget>[
           Stack(
@@ -40,16 +40,16 @@ class _HomePageState extends State<HomePage> {
                           fit: BoxFit.fill),
                       color: Colors.red,
                       shape: BoxShape.circle)),
-              Positioned(
-                bottom: 2,
-                right: 1,
-                child: Container(
-                    height: 18,
-                    width: 18,
-                    child: Icon(Icons.add, size: 18),
-                    decoration: BoxDecoration(
-                        color: Colors.white, shape: BoxShape.circle)),
-              )
+              // Positioned(
+              //   bottom: 2,
+              //   right: 1,
+              //   child: Container(
+              //       height: 18,
+              //       width: 18,
+              //       child: Icon(Icons.add, size: 18),
+              //       decoration: BoxDecoration(
+              //           color: Colors.white, shape: BoxShape.circle)),
+              // )
             ],
           ),
           SizedBox(width: 15)
@@ -60,7 +60,14 @@ class _HomePageState extends State<HomePage> {
 
   Widget getBody(BodyDetail bd) {
     return GestureDetector(
-      onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondPage(bd2: bd,)));},
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => SecondPage(
+                      bd2: bd,
+                    )));
+      },
       child: Container(
           height: 370,
           margin: EdgeInsets.only(bottom: 15),
@@ -111,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                   ),
                   SizedBox(width: 8),
-                  Text("${bd.like}K", style: TextStyle(color: Colors.white)),
+                  Text("${bd.like}K", style: TextStyle(color: Colors.white),),
                   Container(
                       height: 18,
                       child: VerticalDivider(
@@ -157,7 +164,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: Container(
           child: BottomAppBar(
         shape: CircularNotchedRectangle(),
-        color: Colors.redAccent,
+        // color: Colors.redAccent,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
@@ -166,14 +173,14 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(
                   Icons.home,
                   size: 26,
-                  color: Colors.white,
+                  // color: Colors.black,
                 ),
                 onPressed: () {}),
             IconButton(
                 icon: Icon(
                   Icons.search,
                   size: 26,
-                  color: Colors.white,
+                  // color: Colors.white,
                 ),
                 onPressed: () {}),
             SizedBox.shrink(),
@@ -181,14 +188,14 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(
                   Icons.favorite_border,
                   size: 26,
-                  color: Colors.white,
+                  // color: Colors.white,
                 ),
                 onPressed: () {}),
             IconButton(
               icon: Icon(
                 Icons.person,
                 size: 26,
-                color: Colors.white,
+                // color: Colors.white,
               ),
               onPressed: () {},
             )
@@ -213,7 +220,7 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       children: <Widget>[
                         Icon(
-                          Icons.home,
+                          Icons.live_tv,
                           color: Colors.white,
                         ),
                         SizedBox(width: 8),
@@ -228,7 +235,7 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(height: 15),
                 Text(
                   "Instagram",
-                  style: TextStyle(fontSize: 23, color: Colors.white),
+                  style: TextStyle(fontSize: 23, color: Colors.white,fontFamily: "Schyler"),
                 ),
                 SizedBox(height: 20),
                 Container(
@@ -247,156 +254,6 @@ class _HomePageState extends State<HomePage> {
                     children: bodylist.asMap().entries.map((MapEntry map) {
                   return getBody(map.value);
                 }).toList()),
-
-                // Column(
-                //   children: <Widget>[
-                //     Container(
-                //       height:380,
-                //       child:ListView(children: bodylist.toList().asMap().entries.map((MapEntry map){
-                //         return getBody(map.value);
-                //       }).toList())
-                //     ),
-                //   ],
-                // ),
-                // Container(
-                //     height: 370,
-                //     width: double.infinity,
-                //     child: Column(
-                //       children: <Widget>[
-                //         Row(
-                //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //           children: <Widget>[
-                //             Row(
-                //               children: <Widget>[
-                //                 Container(
-                //                     height: 40,
-                //                     width: 40,
-                //                     decoration: BoxDecoration(
-                //                         border: Border.all(
-                //                             color: Colors.white, width: 2),
-                //                         image: DecorationImage(
-                //                             image:
-                //                                 AssetImage("images/pic5.jpeg"),
-                //                             fit: BoxFit.fill),
-                //                         color: Colors.red,
-                //                         shape: BoxShape.circle)),
-                //                 SizedBox(width: 5),
-                //                 Text("Janet Deo",
-                //                     style: TextStyle(color: Colors.white)),
-                //               ],
-                //             ),
-                //             IconButton(
-                //                 icon: Icon(
-                //                   Icons.more_horiz,
-                //                   color: Colors.grey,
-                //                 ),
-                //                 onPressed: () {})
-                //           ],
-                //         ),
-                //         SizedBox(height: 8),
-                //         ClipRRect(
-                //             borderRadius: BorderRadius.circular(10),
-                //             child: Image.asset(
-                //               "images/pic5.jpeg",
-                //               width: double.infinity,
-                //               height: 280,
-                //               fit: BoxFit.fill,
-                //             )),
-                //         SizedBox(height: 10),
-                //         Row(
-                //           children: <Widget>[
-                //             Icon(
-                //               Icons.favorite_border,
-                //               color: Colors.white,
-                //             ),
-                //             SizedBox(width: 8),
-                //             Text("123K", style: TextStyle(color: Colors.white)),
-                //             Container(
-                //                 height: 18,
-                //                 child: VerticalDivider(
-                //                   color: Colors.grey,
-                //                   thickness: 1,
-                //                 )),
-                //             Icon(
-                //               Icons.chat_bubble_outline,
-                //               color: Colors.white,
-                //             ),
-                //             SizedBox(width: 8),
-                //             Text("15", style: TextStyle(color: Colors.white))
-                //           ],
-                //         )
-                //       ],
-                //     )),
-                // SizedBox(height: 15),
-                // Container(
-                //     height: 370,
-                //     width: double.infinity,
-                //     child: Column(
-                //       children: <Widget>[
-                //         Row(
-                //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //           children: <Widget>[
-                //             Row(
-                //               children: <Widget>[
-                //                 Container(
-                //                     height: 40,
-                //                     width: 40,
-                //                     decoration: BoxDecoration(
-                //                         border: Border.all(
-                //                             color: Colors.white, width: 5),
-                //                         image: DecorationImage(
-                //                             image:
-                //                                 AssetImage("images/pic5.jpeg"),
-                //                             fit: BoxFit.fill),
-                //                         color: Colors.red,
-                //                         shape: BoxShape.circle)),
-                //                 SizedBox(width: 5),
-                //                 Text("Janet Deo",
-                //                     style: TextStyle(color: Colors.white)),
-                //               ],
-                //             ),
-                //             IconButton(
-                //                 icon: Icon(
-                //                   Icons.more_horiz,
-                //                   color: Colors.grey,
-                //                 ),
-                //                 onPressed: () {})
-                //           ],
-                //         ),
-                //         SizedBox(height: 8),
-                //         ClipRRect(
-                //             borderRadius: BorderRadius.circular(10),
-                //             child: Image.asset(
-                //               "images/pic5.jpeg",
-                //               width: double.infinity,
-                //               height: 280,
-                //               fit: BoxFit.fill,
-                //             )),
-                //         SizedBox(height: 10),
-                //         Row(
-                //           children: <Widget>[
-                //             Icon(
-                //               Icons.favorite_border,
-                //               color: Colors.white,
-                //             ),
-                //             SizedBox(width: 8),
-                //             Text("123K", style: TextStyle(color: Colors.white)),
-                //             Container(
-                //                 height: 18,
-                //                 child: VerticalDivider(
-                //                   color: Colors.grey,
-                //                   thickness: 1,
-                //                 )),
-                //             Icon(
-                //               Icons.chat_bubble_outline,
-                //               color: Colors.white,
-                //             ),
-                //             SizedBox(width: 8),
-                //             Text("15", style: TextStyle(color: Colors.white))
-                //           ],
-                //         )
-                //       ],
-                //     )),
                 SizedBox(height: 10)
               ],
             ),

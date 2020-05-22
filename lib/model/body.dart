@@ -13,20 +13,20 @@ class BodyDetail {
 
 List<BodyDetail> bodylist = [
   BodyDetail(
-      comment: 15, imageUrl: "images/pic5.jpeg", like: 123, name: "Janet Deo"),
+      comment: 15, imageUrl: "images/4.jpeg", like: 123, name: "Janet Deo"),
   BodyDetail(
       comment: 25,
-      imageUrl: "images/pic5.jpeg",
+      imageUrl: "images/2.jpeg",
       like: 143,
-      name: "Ashumedra Deo"),
+      name: "Paul Deo"),
       BodyDetail(
       comment: 25,
-      imageUrl: "images/pic5.jpeg",
+      imageUrl: "images/1.jpeg",
       like: 153,
-      name: "Kawaljeet Deo"),
+      name: "Ralco Deo"),
       BodyDetail(
       comment: 25,
-      imageUrl: "images/pic5.jpeg",
+      imageUrl: "images/3.jpeg",
       like: 150,
-      name: "Virendre Deo"),
+      name: "Latin Deo"),
 ];

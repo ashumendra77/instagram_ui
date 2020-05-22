@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
  import 'package:instagram_ui/model/body.dart';
 
 class SecondPage extends StatefulWidget {
-  // final instaobject;
   final BodyDetail bd2;
    SecondPage({@required this.bd2});
   @override
