@@ -235,7 +235,7 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(height: 15),
                 Text(
                   "Instagram",
-                  style: TextStyle(fontSize: 23, color: Colors.white,fontFamily: "Schyler"),
+                  style: TextStyle(fontSize: 26, color: Colors.white,fontFamily: "Lobster"),
                 ),
                 SizedBox(height: 20),
                 Container(

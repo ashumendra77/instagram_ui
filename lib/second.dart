@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
- import 'package:instagram_ui/model/body.dart';
+import 'package:instagram_ui/model/body.dart';
 
 class SecondPage extends StatefulWidget {
   final BodyDetail bd2;
-   SecondPage({@required this.bd2});
+  SecondPage({@required this.bd2});
   @override
   _SecondPageState createState() => _SecondPageState();
 }
@@ -14,8 +14,8 @@ class _SecondPageState extends State<SecondPage> {
     return Scaffold(
       backgroundColor: Color(0xff1d1c25),
       bottomNavigationBar: Transform.translate(
-        offset: Offset(0.0, -1*MediaQuery.of(context).viewInsets.bottom),
-              child: Padding(
+        offset: Offset(0.0, -1 * MediaQuery.of(context).viewInsets.bottom),
+        child: Padding(
           padding: EdgeInsets.only(left: 10.0, right: 10, bottom: 5),
           child: Container(
               height: 60,
@@ -24,7 +24,7 @@ class _SecondPageState extends State<SecondPage> {
               child: TextField(
                 autofocus: false,
                 decoration: InputDecoration(
-                  border: InputBorder.none,
+                    border: InputBorder.none,
                     labelText: "Add a comment...",
                     prefixIcon: Container(
                         margin: EdgeInsets.only(left: 15, right: 15),
@@ -70,7 +70,7 @@ class _SecondPageState extends State<SecondPage> {
                                     border: Border.all(
                                         color: Colors.white, width: 2),
                                     image: DecorationImage(
-                                        image: AssetImage("images/pic5.jpeg"),
+                                        image: AssetImage(widget.bd2.imageUrl),
                                         fit: BoxFit.fill),
                                     color: Colors.red,
                                     shape: BoxShape.circle)),
@@ -84,7 +84,7 @@ class _SecondPageState extends State<SecondPage> {
                         ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: Image.asset(
-                              "images/pic5.jpeg",
+                              widget.bd2.imageUrl,
                               width: double.infinity,
                               height: 290,
                               fit: BoxFit.fill,
@@ -97,7 +97,8 @@ class _SecondPageState extends State<SecondPage> {
                               color: Colors.white,
                             ),
                             SizedBox(width: 10),
-                            Text("${widget.bd2.like}K", style: TextStyle(color: Colors.white)),
+                            Text("${widget.bd2.like}K",
+                                style: TextStyle(color: Colors.white)),
                             Container(
                                 height: 18,
                                 child: VerticalDivider(
@@ -109,7 +110,8 @@ class _SecondPageState extends State<SecondPage> {
                               color: Colors.white,
                             ),
                             SizedBox(width: 10),
-                            Text("${widget.bd2.comment}", style: TextStyle(color: Colors.white))
+                            Text("${widget.bd2.comment}",
+                                style: TextStyle(color: Colors.white))
                           ],
                         )
                       ],
@@ -127,7 +129,7 @@ class _SecondPageState extends State<SecondPage> {
                                 border:
                                     Border.all(color: Colors.white, width: 2),
                                 image: DecorationImage(
-                                    image: AssetImage("images/pic5.jpeg"),
+                                    image: AssetImage("images/5.jpeg"),
                                     fit: BoxFit.fill),
                                 color: Colors.red,
                                 shape: BoxShape.circle)),
@@ -166,7 +168,7 @@ class _SecondPageState extends State<SecondPage> {
                                 border:
                                     Border.all(color: Colors.white, width: 2),
                                 image: DecorationImage(
-                                    image: AssetImage("images/pic5.jpeg"),
+                                    image: AssetImage("images/3.jpeg"),
                                     fit: BoxFit.fill),
                                 color: Colors.red,
                                 shape: BoxShape.circle)),
