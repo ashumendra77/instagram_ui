@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_ui/model/body.dart';
 import 'package:instagram_ui/second.dart';
 import 'model/header.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,6 +24,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void dispose() {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    super.initState();
+  }
+
   Widget getheader(Header headerdata) {
     return GestureDetector(
       onTap: () {},
@@ -38,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                       image: DecorationImage(
                           image: AssetImage(headerdata.imageurl),
                           fit: BoxFit.fill),
-                      color: Colors.red,
+                      // color: Colors.red,
                       shape: BoxShape.circle)),
               // Positioned(
               //   bottom: 2,
@@ -87,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                               image: DecorationImage(
                                   image: AssetImage(bd.imageUrl),
                                   fit: BoxFit.fill),
-                              color: Colors.red,
+                              // color: Colors.red,
                               shape: BoxShape.circle)),
                       SizedBox(width: 5),
                       Text(bd.name, style: TextStyle(color: Colors.white)),
@@ -118,7 +131,10 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                   ),
                   SizedBox(width: 8),
-                  Text("${bd.like}K", style: TextStyle(color: Colors.white),),
+                  Text(
+                    "${bd.like}K",
+                    style: TextStyle(color: Colors.white),
+                  ),
                   Container(
                       height: 18,
                       child: VerticalDivider(
@@ -235,7 +251,8 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(height: 15),
                 Text(
                   "Instagram",
-                  style: TextStyle(fontSize: 26, color: Colors.white,fontFamily: "Lobster"),
+                  style: TextStyle(
+                      fontSize: 26, color: Colors.white, fontFamily: "Lobster"),
                 ),
                 SizedBox(height: 20),
                 Container(
